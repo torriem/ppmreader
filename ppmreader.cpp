@@ -92,7 +92,7 @@ uint16_t PPMReader::get_ppm(void) {
 		 */
 		if (ave_ppm > max_ppm) {
 			ave_ppm = max_ppm * coeff + 
-				ave_ppm_ptr * 
+				ave_ppm * 
 				(1 - coeff);
 		}
 	}
