@@ -95,6 +95,7 @@ uint16_t PPMReader::get_ppm(void) {
 				(1 - coeff);
 		}
 	}
+	return ave_ppm;
 }
 
 PPMReader::PPMReader () 
