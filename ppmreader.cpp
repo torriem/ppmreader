@@ -9,7 +9,6 @@
 //TODO should this be configurable by the caller?
 //This sets up a moving average so that what was seen
 //before is less important.
-
 static const double coeff = 0.10;
 
 void PPMReader::on_trigger(void)
@@ -62,7 +61,7 @@ uint16_t PPMReader::get_ppm(void) {
 	
 	if (ave_ppm < ppm_cutoff) {
 		ave_ppm = 0;
-		return;
+		return ave_ppm;
 	}
 
 	/* if too much time has elapsed since our last interrupt,
