@@ -41,6 +41,7 @@ void PPMReader::on_trigger(void)
 	        1000000 * 60 /
 		/* divided by microseconds passed */
 	       (now - last_times[last_time]) );
+	last_times[last_time] = now;
 	last_time = (last_time + 1 ) % TICKS_PER_CALC;
 
 	/* smooth ppm using a moving average. */
@@ -106,6 +107,7 @@ PPMReader::PPMReader ()
 	ppm_cutoff = 50;
 	zero_time = 1000; 
 	record = false;
+	last_time=0;
 	reset();
 }
 
